@@ -60,7 +60,7 @@ const SummarizerPanel = () => {
         defaultContent,
       );
 
-      const response = await fetch('http://localhost:8000/api/summary', {
+      const response = await fetch('https://agora-app-builder.onrender.com/api/summary', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ const SummarizerPanel = () => {
     } catch (err: any) {
       console.error('[SUMMARIZER] Error generating summary:', err);
       setErrorMessage(
-        `Failed to generate summary. Make sure the backend server is running at http://localhost:8000. Details: ${err.message || err}`
+        `Failed to generate summary. Make sure the backend server is running at https://agora-app-builder.onrender.com. Details: ${err.message || err}`
       );
     } finally {
       setIsSummarizing(false);
